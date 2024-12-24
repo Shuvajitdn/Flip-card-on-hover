@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    font-family: 'Cabin', sans-serif;
+    background-image: linear-gradient(60deg, #66757F, #292F33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-wrap {
+    border-radius: 0.37rem;
+    perspective: 1000px;
+    height: 20rem;
+    width: 30rem;
+    margin: auto;
+}
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 0.37rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.card-front {
+    background-color: #d30404;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.card-back {
+    background-color: #CCD6DD;
+    transform: rotateY(180deg);
+}
+.card-wrap:hover .card {
+    transform: rotateY(180deg);
+}
+.card-logo img {
+    width: 150px;
+    margin-bottom: 1rem;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 1rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.user-info {
+    text-align: center;
+    color: #292F33;
+}
+.user-info .username {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgb(2, 68, 99);
+    margin-bottom: 0.5rem;
+}
+.user-info .user-bio {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+.follow-btn {
+    padding: 0.5rem;
+    width: 9rem;
+    color: #E1E8ED;
+    background-color: #ce0505;
+    border: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.0625rem;
+    border-radius: 0.27rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.follow-btn:hover {
+    cursor: pointer;
+    background-color: #ff0d41;
+    color: white;
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .card-wrap {
+        width: 90%;
+        height: auto;
+    }
+    .card-logo img {
+        width: 120px;
+    }
+    .user img {
+        width: 60px;
+        height: 60px;
+    }
+}
